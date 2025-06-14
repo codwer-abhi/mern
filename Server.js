@@ -6,8 +6,7 @@ const { connectToDatabase } = require('./utils/db');
 const contactrouter=require('./Router/Contact-route');
 const servicerouter = require('./Router/Service-router');
 const adminrouter = require('./Router/admin-router');
-const corsOptions={ cors()}
-app.use(cors(corsOptions));
+app.use(cors( ));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const allrouter= require('./Router/auth-router');
