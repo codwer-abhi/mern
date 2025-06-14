@@ -1,0 +1,10 @@
+const express = require('express');
+const { handleAdmin,handleContact,handledelete,handlecontactdelete} = require('../Controllers/admin-controller.js');
+const authMiddleware = require('../MIddlewares/authMiddleware.js');
+const adminMiddleware = require('../MIddlewares/admin-middleware.js');
+const router = express.Router();
+router.get('/', authMiddleware, adminMiddleware, handleAdmin);
+router.delete('/delete/:id',authMiddleware,adminMiddleware,handledelete);
+router.delete('/contact/delete/:id',authMiddleware,adminMiddleware,handlecontactdelete);
+router.get('/contact', authMiddleware, adminMiddleware, handleContact);
+module.exports = router;
