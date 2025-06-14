@@ -6,11 +6,7 @@ const { connectToDatabase } = require('./utils/db');
 const contactrouter=require('./Router/Contact-route');
 const servicerouter = require('./Router/Service-router');
 const adminrouter = require('./Router/admin-router');
-const corsOptions={
-    origin: 'https://684d0895f12af909e2dbdaa1--precious-torte-12cca5.netlify.app/', // Replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-}
+const corsOptions={ cors()}
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
